@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-ybae=!&c9)iull329&ew%s22178nheuxsksui#2f1e#f149hc^'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -123,5 +123,10 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+import os
+# MEDIA_ROOT=BASE_DIR/"uploads"
+MEDIA_ROOT=os.path.join(BASE_DIR,"uploads")
 
-MEDIA_ROOT=BASE_DIR/"uploads"
+MEDIA_URL="/uploads/"
+
+SESSION_COOKIE_AGE=120
